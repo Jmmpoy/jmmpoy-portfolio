@@ -1,4 +1,11 @@
 module.exports = {
+  images: {
+    remotePatterns: [
+      { hostname: 'cdn.sanity.io' },
+      { hostname: 'framerusercontent.com' },
+    ],
+  },
+
   // Configuration pour éviter les erreurs GSAP côté serveur
   webpack: (config, { isServer }) => {
     if (!isServer) {
