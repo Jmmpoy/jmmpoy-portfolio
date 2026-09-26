@@ -33,6 +33,9 @@ async function generateScreenshots() {
       console.log(`Capturant ${site.name}...`);
       await page.goto(site.url, { waitUntil: 'networkidle2', timeout: 30000 });
 
+      // Attendre que le preloader disparaisse complètement
+      await new Promise(resolve => setTimeout(resolve, 2500));
+
       // Premier screenshot (hero)
       await page.screenshot({
         path: path.join(site.outputDir, site.files[0]),
