@@ -1,4 +1,4 @@
-# Portfolio V2 - Jean-Marc Mpoy
+# Portfolio - Jean-Marc Mpoy
 
 Mon portfolio personnel présentant mes projets et compétences en développement web et design d'interfaces.
 
@@ -30,10 +30,10 @@ Mon portfolio personnel présentant mes projets et compétences en développemen
 
 ```bash
 # Clone le repository
-git clone https://github.com/Jmmpoy/Portfolio-V2.git
+git clone https://github.com/Jmmpoy/jmmpoy-portfolio.git
 
 # Entre dans le dossier
-cd Portfolio-V2
+cd jmmpoy-portfolio
 
 # Installe les dépendances
 npm install
