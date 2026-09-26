@@ -4,18 +4,29 @@ const data = [
     name: "Agathe Marimbert",
     year: "2026",
     tags: ["Développement Front-End"],
-    inProgress: true,
-    link: "",
+    link: "https://agathemarimbert.com",
     coverImage: "/assets/Projects/AgatheMarimbert/agathe-1.png",
+    description: {
+      firstPart:
+        "Pour Agathe Marimbert, développeuse créative basée à Paris, j'ai conçu et développé un portfolio digital personnel mettant en avant ses projets web et ses explorations visuelles. L'objectif était de créer une plateforme où minimalisme et interactivité cohabitent, reflétant son approche du développement : précision technique alliée à raffinement esthétique.",
+      secondPart:
+        "Le site a été développé en Next.js avec Tailwind CSS, offrant une navigation fluide et une mise en avant élégante de ses travaux. Chaque projet est présenté avec soin, du code à la présentation visuelle, dans une expérience transparente et immersive.",
+    },
   },
   {
     id: "AntoninSaurat",
     name: "Antonin Saurat",
     year: "2026",
-    tags: ["Développement Front-End"],
-    inProgress: true,
-    link: "",
+    tags: ["Direction Artistique", "Design de Marque", "UI Design"],
+    link: "https://www.antoninsaurat.work/",
     coverImage: "/assets/Projects/AntoninSaurat/antonin-1.png",
+    description: {
+      firstPart:
+        "Pour Antonin Saurat, designer indépendant et directeur artistique, j'ai développé son portfolio numérique présentant ses compétences en direction de marque, design d'identité visuelle et direction artistique. Le défi était de créer une vitrine qui incarne sa philosophie de design — épurée, réfléchie, orientée vers l'impact visuel — tout en mettant en avant ses collaborations avec startups, agences et marques établies.",
+      secondPart:
+        "Le site a été construit avec Next.js et Tailwind CSS, créant un environnement numérique qui reflète l'expertise d'Antonin. La présentation des projets, de l'identité logotype au design multichannel en passant par la direction artistique, offre une immersion dans son univers créatif et professionnel.",
+    },
+    secondaryImage: "/assets/Projects/AntoninSaurat/antonin-2.png",
   },
   {
     id: "Beaumonde",
