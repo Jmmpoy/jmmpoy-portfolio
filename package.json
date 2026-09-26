@@ -24,11 +24,13 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "capture:videos": "node scripts/capture-videos.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@studio-freight/lenis": "^1.0.42",
+    "ffmpeg-static": "^5.3.0",
     "gsap": "^3.13.0",
     "motion": "^12.23.24",
     "next": "^14.2.33",
@@ -36,6 +38,7 @@
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.5",
     "postcss-preset-env": "^6.7.0",
+    "puppeteer": "^24.43.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.0"
@@ -54,6 +57,7 @@
     "postcss": "^8.4.5",
     "prettier": "^3.6.2",
     "tailwindcss": "^3.0.13",
+    "ts-node": "^10.9.2",
     "typescript": "5.9.3"
   }
 }
