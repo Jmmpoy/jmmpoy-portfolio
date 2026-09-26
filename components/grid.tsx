@@ -79,23 +79,21 @@ const ProjectItem = ({ project, handleLinkClick }: ProjectItemProps) => {
           />
         )}
       </AnimatePresence>
-      {!isInProgress && (
-        <AnimatePresence>
-          {isHovering && (
-            <span className="z-20 absolute bottom-4 left-4 block overflow-hidden">
-              <motion.span
-                initial={{ y: "110%" }}
-                animate={{ y: "0%" }}
-                exit={{ y: "110%" }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="block uppercase text-white font-founders text-xl"
-              >
-                {project.name}
-              </motion.span>
-            </span>
-          )}
-        </AnimatePresence>
-      )}
+      <AnimatePresence>
+        {isHovering && (
+          <span className="z-20 absolute bottom-4 left-4 block overflow-hidden">
+            <motion.span
+              initial={{ y: "110%" }}
+              animate={{ y: "0%" }}
+              exit={{ y: "110%" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="block uppercase text-white font-founders text-xl"
+            >
+              {project.name}
+            </motion.span>
+          </span>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 

@@ -1,5 +1,23 @@
 const data = [
   {
+    id: "LeCann",
+    name: "Le Cann",
+    year: "2026",
+    role: "Développement",
+    tags: ["Architecture", "Design d'Intérieur", "Développement Front-End"],
+    description: {
+      firstPart:
+        "Pour Le Cann, studio parisien d'architecture d'intérieur fondé par Raphaëlle Robert et Guillaume Fantin, je développe le site présentant leurs intérieurs et leurs mobiliers, de l'hôtellerie au résidentiel en passant par le retail et les bureaux. L'enjeu est de laisser toute la place aux photographies et à l'atmosphère du studio, dans une navigation sobre et élégante.",
+      secondPart:
+        "Le site est développé avec Next.js et le CMS Sanity, qui permet au studio de gérer ses projets et ses contenus en toute autonomie.",
+    },
+    color: "bg-yellow-500",
+    link: "https://www.studiolecann.fr/le-cann-i-interieurs",
+    coverImage: "/assets/Projects/LeCann/lecann-1.webp",
+    secondaryImage: "/assets/Projects/LeCann/lecann-2.webp",
+    inProgress: true,
+  },
+  {
     id: "AgatheMarimbert",
     name: "Agathe Marimbert",
     year: "2026",
