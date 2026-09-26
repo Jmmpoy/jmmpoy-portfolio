@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
           {/* Preloading key fonts */}
           <link
             rel="preload"
-            href="/public/fonts/Sohne/Sohne-Buch.woff2"
+            href="/fonts/Sohne/Sohne-Buch.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
