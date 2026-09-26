@@ -3,15 +3,19 @@ const data = [
     id: "AgatheMarimbert",
     name: "Agathe Marimbert",
     year: "2026",
-    tags: ["Développement Front-End"],
-    link: "https://agathemarimbert.com",
-    coverImage: "/assets/Projects/AgatheMarimbert/agathe-1.png",
+    tags: ["Architecture", "Design d'Intérieur", "Objets"],
+    link: "https://www.marimbert.fr",
+    coverImage: "/assets/Projects/AgatheMarimbert/agathe-cover.jpg",
     description: {
       firstPart:
-        "Pour Agathe Marimbert, développeuse créative basée à Paris, j'ai conçu et développé un portfolio digital personnel mettant en avant ses projets web et ses explorations visuelles. L'objectif était de créer une plateforme où minimalisme et interactivité cohabitent, reflétant son approche du développement : précision technique alliée à raffinement esthétique.",
+        "Pour Agathe Marimbert, architecte d'intérieur basée à Paris, j'ai développé son portfolio numérique présentant son expertise en architecture résidentielle, bureaux et design retail. Le défi était de créer une plateforme qui incarne sa philosophie de design — épurée, intemporelle, orientée vers la qualité des matériaux et des proportions — tout en mettant en avant ses collaborations avec clients institutionnels et entreprises.",
       secondPart:
-        "Le site a été développé en Next.js avec Tailwind CSS, offrant une navigation fluide et une mise en avant élégante de ses travaux. Chaque projet est présenté avec soin, du code à la présentation visuelle, dans une expérience transparente et immersive.",
+        "Le site a été construit avec Next.js et Tailwind CSS, créant un environnement numérique qui reflète l'expertise d'Agathe. La présentation des projets résidentiels, des aménagements commerciaux aux espaces de travail, en passant par sa collection d'objets architecturaux, offre une immersion dans son univers de design épuré et fonctionnel.",
     },
+    secondaryImage: "/assets/Projects/AgatheMarimbert/agathe-portrait.png",
+    thirdImage: "/assets/Projects/AgatheMarimbert/agathe-spring-1.jpg",
+    fourthImage: "/assets/Projects/AgatheMarimbert/agathe-spring-2.jpg",
+    fifthImage: "/assets/Projects/AgatheMarimbert/agathe-prisma-1.png",
   },
   {
     id: "AntoninSaurat",
@@ -26,7 +30,11 @@ const data = [
       secondPart:
         "Le site a été construit avec Next.js et Tailwind CSS, créant un environnement numérique qui reflète l'expertise d'Antonin. La présentation des projets, de l'identité logotype au design multichannel en passant par la direction artistique, offre une immersion dans son univers créatif et professionnel.",
     },
-    secondaryImage: "/assets/Projects/AntoninSaurat/antonin-2.png",
+    secondaryImage: "/assets/Projects/AntoninSaurat/antonin-2.jpg",
+    thirdImage: "/assets/Projects/AntoninSaurat/antonin-3.png",
+    fourthImage: "/assets/Projects/AntoninSaurat/antonin-4.webp",
+    fifthImage: "/assets/Projects/AntoninSaurat/antonin-5.png",
+    sixthImage: "/assets/Projects/AntoninSaurat/antonin-6.jpg",
   },
   {
     id: "Beaumonde",
