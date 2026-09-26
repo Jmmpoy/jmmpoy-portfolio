@@ -25,8 +25,6 @@ export default function Project({ project }: { project: ProjectType }) {
     seventhImage,
     eighthImage,
     ninthImage,
-    tenthImage,
-    eleventhImage,
     coverVideo,
     objectFit,
   } = project;
@@ -42,8 +40,6 @@ export default function Project({ project }: { project: ProjectType }) {
     seventhImage,
     eighthImage,
     ninthImage,
-    tenthImage,
-    eleventhImage,
   ].filter((item): item is string => Boolean(item));
 
   const [selected, setSelected] = useState<string | null>(null);

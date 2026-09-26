@@ -33,7 +33,7 @@ const Title = ({ classes, name, link }: TitleProps) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <motion.div animate={{ x: isHovered ? -5 : 0 }}>
+        <div className="relative inline-block">
           <SplitText
             text={name}
             splitType="chars"
@@ -46,15 +46,21 @@ const Title = ({ classes, name, link }: TitleProps) => {
             tag="span"
             playOnce={false}
           />
-        </motion.div>
+          <motion.div
+            animate={{ scaleX: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="absolute bottom-0 left-0 h-0.5 bg-black dark:bg-white origin-left"
+            style={{ width: "100%" }}
+          />
+        </div>
         <AnimatePresence>
           {isHovered && (
             <motion.span
               className="ml-2"
-              initial={{ opacity: 0, x: -10, filter: "blur(2px)" }}
-              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, x: -10, filter: "blur(2px)" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut", delay: 0.2 }}
             >
               →
             </motion.span>
