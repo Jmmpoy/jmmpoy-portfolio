@@ -5,17 +5,17 @@ const data = [
     year: "2026",
     tags: ["Architecture", "Design d'Intérieur", "Objets"],
     link: "https://www.marimbert.fr",
-    coverImage: "/assets/Projects/AgatheMarimbert/agathe-cover.jpg",
+    coverImage: "https://cdn.sanity.io/images/idcklk40/production/6e2f8494aa0f4c4110321d295e939bad4a9507b2-5370x8047.jpg?w=1200&q=90&fit=crop&auto=format",
     description: {
       firstPart:
         "Pour Agathe Marimbert, architecte d'intérieur basée à Paris, j'ai développé son portfolio numérique présentant son expertise en architecture résidentielle, bureaux et design retail. Le défi était de créer une plateforme qui incarne sa philosophie de design — épurée, intemporelle, orientée vers la qualité des matériaux et des proportions — tout en mettant en avant ses collaborations avec clients institutionnels et entreprises.",
       secondPart:
         "Le site a été construit avec Next.js et Tailwind CSS, créant un environnement numérique qui reflète l'expertise d'Agathe. La présentation des projets résidentiels, des aménagements commerciaux aux espaces de travail, en passant par sa collection d'objets architecturaux, offre une immersion dans son univers de design épuré et fonctionnel.",
     },
-    secondaryImage: "/assets/Projects/AgatheMarimbert/agathe-portrait.png",
-    thirdImage: "/assets/Projects/AgatheMarimbert/agathe-spring-1.jpg",
-    fourthImage: "/assets/Projects/AgatheMarimbert/agathe-spring-2.jpg",
-    fifthImage: "/assets/Projects/AgatheMarimbert/agathe-prisma-1.png",
+    secondaryImage: "https://cdn.sanity.io/images/idcklk40/production/591381aa0313d116fb7707c072c2ea39463fd86b-928x1160.png?w=1200&q=90&fit=crop&auto=format",
+    thirdImage: "https://cdn.sanity.io/images/idcklk40/production/f72292303d91fde1cea1ce4dd5d64785358ae1fc-4330x6494.jpg?w=1200&q=90&fit=crop&auto=format",
+    fourthImage: "https://cdn.sanity.io/images/idcklk40/production/d99c8b4bc03e6a55dee506b8726299ed29e6b2f6-4394x6591.jpg?w=1200&q=90&fit=crop&auto=format",
+    fifthImage: "https://cdn.sanity.io/images/idcklk40/production/fa57df670589ef15830228e3afcf54f8375b5dfe-5417x8117.png?w=1200&q=90&fit=crop&auto=format",
   },
   {
     id: "AntoninSaurat",
@@ -23,18 +23,18 @@ const data = [
     year: "2026",
     tags: ["Direction Artistique", "Design de Marque", "UI Design"],
     link: "https://www.antoninsaurat.work/",
-    coverImage: "/assets/Projects/AntoninSaurat/antonin-1.png",
+    coverImage: "https://framerusercontent.com/images/1M0d5YjIfANDmWpB9JoPEGIlCk.jpg?width=1200",
     description: {
       firstPart:
         "Pour Antonin Saurat, designer indépendant et directeur artistique, j'ai développé son portfolio numérique présentant ses compétences en direction de marque, design d'identité visuelle et direction artistique. Le défi était de créer une vitrine qui incarne sa philosophie de design — épurée, réfléchie, orientée vers l'impact visuel — tout en mettant en avant ses collaborations avec startups, agences et marques établies.",
       secondPart:
         "Le site a été construit avec Next.js et Tailwind CSS, créant un environnement numérique qui reflète l'expertise d'Antonin. La présentation des projets, de l'identité logotype au design multichannel en passant par la direction artistique, offre une immersion dans son univers créatif et professionnel.",
     },
-    secondaryImage: "/assets/Projects/AntoninSaurat/antonin-2.jpg",
-    thirdImage: "/assets/Projects/AntoninSaurat/antonin-3.png",
-    fourthImage: "/assets/Projects/AntoninSaurat/antonin-4.webp",
-    fifthImage: "/assets/Projects/AntoninSaurat/antonin-5.png",
-    sixthImage: "/assets/Projects/AntoninSaurat/antonin-6.jpg",
+    secondaryImage: "https://framerusercontent.com/images/9dWJtEYsiX7oGkGHBrxKZfyVyQE.png?width=1200",
+    thirdImage: "https://framerusercontent.com/images/M5otmogB8Ul8hOgv9DKYKlKJbWU.webp?width=1200",
+    fourthImage: "https://framerusercontent.com/images/fjsFuk14swVqnSxORuHbayZxztc.png?width=1200",
+    fifthImage: "https://framerusercontent.com/images/RqxYheayB8injENYYEqGkjwpzg.jpg?width=1200",
+    sixthImage: "https://framerusercontent.com/images/yFRWWNgP3F9ZThvCiAXdTxEQgE.webp?width=1200",
   },
   {
     id: "Beaumonde",
