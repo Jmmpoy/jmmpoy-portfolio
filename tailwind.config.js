@@ -2,23 +2,11 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      sans: ["Futura", "Arial", "sans-serif"],
+      sans: ["Neue-Regular", "Arial", "sans-serif"],
       mono: ["Lucida Console", "Courier", "monospace"],
-      neueLight: ["Neue-Light"],
       neueRegular: ["Neue-Regular"],
-      neueMedium: ["Neue-Medium"],
       neueBold: ["Neue-Bold"],
-      futuraLight: ["Futura-Light"],
-      foundersLight: ["FoundersLight"],
-      founders: ["Founders"],
-      ibm: ["IBM"],
-      ibmLight: ["IBMLight"],
-      sohneBuch: ["Sohne-Buch"], // light
-      sohneFett: ["Sohne-Fett"], // très gras
-      sohneKraftig: ["Sohne-Kraftig"], // gras
-      sohneHalbfett: ["Sohne-Halbfett"], // gras moyen
-      sohneLeicht: ["Sohne-Leicht"],
-      sohneExtraleicht: ["Sohne-Extraleicht"],
+      sohneKraftig: ["Sohne-Kraftig"],
     },
     screens: {
       xsm: "400px",

@@ -3,22 +3,13 @@ import Container from "@/components/container";
 import { fade } from "@/helpers/transitions";
 import { motion } from "motion/react";
 import Link from "next/link";
-import DateTime from "@/components/dateTime";
-import Footer from "../socials";
 
-// // Import dynamique de SplitText pour éviter l'exécution côté serveur de GSAP
-// const SplitText = dynamic(() => import("@/components/splitText"), {
-//   ssr: false,
-// });
 export default function Header() {
   const menuItems = [{ route: "JM.M", url: "/" }];
 
   return (
     <header
-      className="fixed  w-full  flex flex-col justify-center pt-2 z-10 h-12"
-      data-scroll
-      data-scroll-sticky
-      data-scroll-target="#scroll-container"
+      className="fixed  w-full transition-colors duration-200 ease-out flex flex-col justify-center pt-2 z-10 h-12"
     >
       <Container extraClasses="Header-Section ">
         <motion.div className="flex flex-col  h-full sm:justify-between   sm:flex-row">
@@ -34,12 +25,12 @@ export default function Header() {
                 return (
                   <motion.li
                     key={index}
-                    className="text-xs uppercase transition  ease-in-out duration-10"
+                    className="text-xs uppercase"
                   >
                     <Link
                       scroll={false}
                       href={url}
-                      className="relative tracking-tighter font-sohneBuch text-sm mix-blend-difference inline-block transition-transform duration-150 ease-out hover:scale-[1.04] active:scale-[0.96]"
+                      className="relative tracking-tighter text-sm mix-blend-difference inline-block"
                     >
                       <p className=" uppercase text-sm font-sohneKraftig">{route}</p>
                     </Link>
@@ -47,10 +38,7 @@ export default function Header() {
                 );
               })}
             </motion.ul>
-            <div className="w-full flex items-center">
-              <DateTime />
-              <Footer />
-            </div>
+            <span className="w-full text-right font-neueBold text-sm tracking-[-0.04em]">{`© ${new Date().getFullYear()}`}</span>
           </motion.nav>
         </motion.div>
       </Container>

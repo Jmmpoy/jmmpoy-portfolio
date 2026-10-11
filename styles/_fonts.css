@@ -1,29 +1,9 @@
 @font-face {
-  font-family: "Neue-Black";
-  src:
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Black.woff2") format("woff2"),
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Neue-Regular";
   src:
     url("/fonts/Neue/NeueHaasGroteskDisplay-Reg.woff2") format("woff2"),
     url("/fonts/Neue/NeueHaasGroteskDisplay-Reg.woff") format("woff");
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Neue-Light";
-  src:
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Light.woff2") format("woff2"),
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -39,159 +19,11 @@
 }
 
 @font-face {
-  font-family: "Neue-Medium";
-  src:
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Medium.woff2") format("woff2"),
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Neue-Thin";
-  src:
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Thin.woff2") format("woff2"),
-    url("/fonts/Neue/NeueHaasGroteskDisplay-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-/*****
-******
-FUTURA
-******
-******
-*/
-
-@font-face {
-  font-family: "Futura-Light";
-  src:
-    url("/fonts/Futura/FuturaPT-Light.woff2") format("woff2"),
-    url("/fonts/Futura/FuturaPT-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Futura";
-  src:
-    url("/fonts/Futura/FuturaPT-Medium.woff2") format("woff2"),
-    url("/fonts/Futura/FuturaPT-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/*****
-******
-FOUNDERS
-******
-******
-*/
-
-@font-face {
-  font-family: "Founders";
-  src:
-    url("/fonts/FoundersGrotesk/WOFF/FoundersGrotesk-Regular.woff2") format("woff2"),
-    url("/fonts/FoundersGrotesk/WOFF/FoundersGrotesk-Regular.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "FoundersLight";
-  src:
-    url("/fonts/FoundersGrotesk/WOFF/FoundersGrotesk-Light.woff2") format("woff2"),
-    url("/fonts/FoundersGrotesk/WOFF/FoundersGrotesk-Light.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/*****
-******
-IBM
-******
-******
-*/
-
-@font-face {
-  font-family: "IBM";
-  src:
-    url("/fonts/IBM Plex Mono/woff2/IBMPlexMono-Light.woff2") format("woff2"),
-    url("/fonts/IBM Plex Mono/woff/IBMPlexMono-Light.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IBMLight";
-  src:
-    url("/fonts/IBM Plex Mono/woff2/IBMPlexMono-ExtraLight.woff2") format("woff2"),
-    url("/fonts/IBM Plex Mono/woff/IBMPlexMono-ExtraLight.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/*****
-******
-SOHNE
-******
-******
-*/
-
-@font-face {
-  font-family: "Sohne-Buch";
-  src:
-    url("/fonts/Sohne/Sohne-Buch.woff") format("woff2"),
-    url("/fonts/Sohne/Sohne-Buch.woff2") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sohne-Fett";
-  src:
-    url("/fonts/Sohne/Sohne-Fett.woff2") format("woff2"),
-    url("/fonts/Sohne/Sohne-Fett.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Sohne-Kraftig";
   src:
     url("/fonts/Sohne/Sohne-Kraftig.woff2") format("woff2"),
     url("/fonts/Sohne/Sohne-Kraftig.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sohne-Extraleicht";
-  src:
-    url("/fonts/Sohne/Sohne-Extraleicht.woff2") format("woff2"),
-    url("/fonts/Sohne/Sohne-Extraleicht.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sohne-Leicht";
-  src:
-    url("/fonts/Sohne/Sohne-Leicht.woff2") format("woff2"),
-    url("/fonts/Sohne/Sohne-Leicht.woff") format("woff");
-  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }

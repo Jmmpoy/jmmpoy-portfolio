@@ -7,7 +7,6 @@
 
 /* Custom Style Imports */
 @import "_typography.css";
-@import "_locomotive.css";
 
 /* Tailwind Utilities */
 @import "tailwindcss/utilities";
@@ -22,25 +21,6 @@ body {
   @apply font-sans antialiased text-black bg-beige;
 }
 
-.grain {
-  position: relative;
-  isolation: isolate; /* Create a new stacking context */
-}
-
-.grain::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/assets/noise.svg");
-  opacity: 0.2;
-  pointer-events: none;
-  z-index: 2; /* Ensure it's above the image */
-  animation: grain 8s steps(10) infinite;
-}
-
 h1 {
   @apply font-sans mb-3;
 }
@@ -49,17 +29,13 @@ h2 {
   @apply font-sans tracking-tight;
 }
 
-h3 {
-  @apply text-4xl font-futuraLight tracking-tight;
-}
-
 h4 {
   @apply text-2xl;
 }
 
 p,
 a {
-  @apply font-futuraLight no-underline;
+  @apply no-underline;
 }
 
 li {
@@ -90,86 +66,6 @@ body {
       height: calc(100vh - 24px);
     }
   }
-  /* Hero Headline*/
-  .hero-container {
-    max-width: 1000px;
-  }
-
-  /* Scroll Indicator */
-  .arrow {
-    top: 85%;
-  }
-
-  /* Naviagtion underline */
-  .shadow {
-    position: absolute;
-    inset: 0;
-    background-color: black;
-    border-radius: 4px;
-    z-index: -1;
-    height: 10%;
-    top: 29px;
-  }
-
-  /* Burger */
-  .bar {
-    height: 1px;
-    background: "black";
-  }
-
-  /* Overlay Menu Item*/
-  .menu-overlay-item {
-    cursor: pointer;
-    transition: all 0.4s ease-out;
-  }
-
-  .menu-overlay-item:hover {
-    /* temporary fix: !important */
-    transform: translateX(15px) !important;
-  }
-
-  .line {
-    background: black;
-    width: 50%;
-    height: 0.5px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-font-space {
-    word-spacing: -20px;
-  }
-
-  .hero-font-space-small {
-    word-spacing: -12px;
-  }
-
-  .hero-font-size {
-    @media (max-width: 425px) {
-      font-size: 7vw;
-    }
-  }
-
-  .hero-404-font-size {
-    @media (max-width: 425px) {
-      font-size: 6vw;
-    }
-  }
-
-  .arrow {
-    opacity: 0%;
-    transition: all;
-    transition-duration: 100ms;
-  }
-
-  .project:hover > .arrow {
-    opacity: 100%;
-  }
-
   .image-container {
     /* background: #F5F5F5; */
     width: 100%;
@@ -190,24 +86,47 @@ body {
     height: unset !important;
   }
 
-  .project-image-card > span > span {
-    display: none !important;
-  }
+}
 
-  .project-image-card {
-    animation: fadeIn 2s;
+/* Home : fond média plein écran au survol d'un projet */
+.home-layer img,
+.home-layer video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--pos);
+}
+@media (max-aspect-ratio: 1/1) {
+  .home-layer img {
+    object-position: var(--pos-m);
+    transform-origin: var(--pos-m);
+    transform: scale(var(--zoom-m));
   }
+}
+body.home-bg header {
+  color: #fff;
+}
+@media (prefers-reduced-motion: reduce) {
+  header {
+    transition: none;
+  }
+}
 
-  .grid-element > img {
-    height: 100% !important;
-    object-fit: cover !important;
+/* Home : fondu d'entrée au chargement, décalé de 35 ms par bloc (variable --i).
+   fill-mode backwards : l'opacité reprend ensuite sa valeur normale (survol compris). */
+.home-in {
+  animation: home-in 350ms cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 35ms);
+}
+@keyframes home-in {
+  from {
+    opacity: 0;
   }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-in {
+    animation-duration: 150ms;
+    animation-delay: 0s;
   }
 }
