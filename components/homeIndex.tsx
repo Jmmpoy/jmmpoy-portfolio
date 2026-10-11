@@ -36,10 +36,15 @@ export default function HomeIndex() {
   const zIndex = useRef<Record<string, number>>({});
   const videos = useRef<Record<string, HTMLVideoElement | null>>({});
   const touch = useRef(false);
+  const [isTouch, setIsTouch] = useState(false);
+  const [lock, setLock] = useState(false);
+  const start = useRef<{ x: number; y: number } | null>(null);
+  const swiped = useRef(false);
 
   // Précharge les fonds un par un quand le navigateur est au repos ; un survol force le chargement immédiat.
   useEffect(() => {
     touch.current = window.matchMedia("(hover: none)").matches;
+    setIsTouch(touch.current);
     let i = 0;
     let t: ReturnType<typeof setTimeout>;
     const next = () => {
@@ -77,11 +82,46 @@ export default function HomeIndex() {
     setActive(id);
   };
 
-  // Tactile : un premier tap prévisualise, le second suit le lien.
+  // Tactile : le premier projet est sélectionné d'emblée, un balayage vertical passe au suivant.
+  useEffect(() => {
+    if (touch.current) show(projects[0].id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Le balayage peut bloquer le défilement de toute la page seulement si elle tient dans l'écran ;
+  // sinon (petits téléphones) il reste limité à la liste, pour que Contact reste atteignable.
+  useEffect(() => {
+    const measure = () => setLock(document.documentElement.scrollHeight <= window.innerHeight + 1);
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  const SWIPE_MIN = 40; // distance minimale en px
+  const SWIPE_RATIO = 1.5; // l'axe vertical doit l'emporter d'au moins 1,5x
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (!touch.current) return;
+    start.current = { x: e.clientX, y: e.clientY };
+    swiped.current = false;
+  };
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (!touch.current || !start.current || !active) return;
+    const dx = e.clientX - start.current.x;
+    const dy = e.clientY - start.current.y;
+    start.current = null;
+    if (Math.abs(dy) < SWIPE_MIN || Math.abs(dy) < Math.abs(dx) * SWIPE_RATIO) return;
+    swiped.current = true;
+    const i = projects.findIndex((p) => p.id === active);
+    // vers le haut : projet suivant ; vers le bas : précédent (en boucle)
+    show(projects[(i + (dy < 0 ? 1 : -1) + projects.length) % projects.length].id);
+  };
+
+  // Tactile : le nom ne fait que sélectionner (le fond suit) ; seule la flèche ouvre le site.
   const onClick = (e: React.MouseEvent, id: string) => {
-    if (touch.current && active !== id) {
+    if (touch.current) {
       e.preventDefault();
-      show(id);
+      if (!swiped.current) show(id);
+      swiped.current = false;
     }
   };
 
@@ -90,6 +130,10 @@ export default function HomeIndex() {
   return (
     <div
       className={`bg-[#F6F6F3] ${active && !BG[active].dark ? "text-white" : "text-fullBlack"} transition-colors duration-200 ease-out`}
+      style={isTouch && lock ? { touchAction: "none" } : undefined}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onPointerCancel={() => (start.current = null)}
     >
       {/* Fond média : calques par projet + voile */}
       <div
@@ -139,8 +183,9 @@ export default function HomeIndex() {
         <ul
           aria-label="Projets"
           className="font-neueBold font-bold text-[clamp(24px,2.05vw,34px)] leading-[1.1] tracking-[-0.04em] [word-spacing:.06em]"
-          onMouseLeave={() => show(null)}
-          onBlur={() => show(null)}
+          style={isTouch ? { touchAction: "none" } : undefined}
+          onMouseLeave={() => !touch.current && show(null)}
+          onBlur={(e) => !touch.current && !e.currentTarget.contains(e.relatedTarget as Node | null) && show(null)}
         >
           {projects.map((p, i) => (
             <li
@@ -148,22 +193,43 @@ export default function HomeIndex() {
               className="home-in text-[length:inherit] leading-[inherit]"
               style={{ "--i": i } as React.CSSProperties}
             >
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={() => !touch.current && show(p.id)}
-                onFocus={() => show(p.id)}
-                onClick={(e) => onClick(e, p.id)}
-                className={`relative inline-block font-neueBold transition-opacity duration-200 ease-out motion-reduce:transition-none ${dim(active === p.id)}`}
+              <span
+                className={`relative inline-block transition-opacity duration-200 ease-out motion-reduce:transition-none ${dim(active === p.id)}`}
               >
-                {p.name}
-                {p.inProgress && (
-                  <span className={`${label} absolute left-full top-1/2 -translate-y-1/2 ml-[.7em] whitespace-nowrap`}>
-                    En cours
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  draggable={false}
+                  onMouseEnter={() => !touch.current && show(p.id)}
+                  onFocus={() => show(p.id)}
+                  onClick={(e) => onClick(e, p.id)}
+                  className="font-neueBold"
+                >
+                  {p.name}
+                </a>
+                {(p.inProgress || isTouch) && (
+                  <span className="absolute left-full top-1/2 -translate-y-1/2 ml-[.7em] flex items-center gap-2 whitespace-nowrap">
+                    {p.inProgress && <span className={label}>En cours</span>}
+                    {isTouch && (
+                      // Flèche visible sur le projet sélectionné ; zone de tap élargie à 44 px (p-4 / -m-4).
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Ouvrir ${p.name}`}
+                        draggable={false}
+                        tabIndex={active === p.id ? 0 : -1}
+                        className={`-m-4 p-4 transition-opacity duration-200 ease-out motion-reduce:transition-none ${active === p.id ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                      >
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                          <path d="M2 10 L10 2 M4 2 H10 V8" />
+                        </svg>
+                      </a>
+                    )}
                   </span>
                 )}
-              </a>
+              </span>
             </li>
           ))}
         </ul>
@@ -186,6 +252,8 @@ export default function HomeIndex() {
               <a
                 key={c.href}
                 href={c.href}
+                draggable={false}
+                onClick={(e) => swiped.current && e.preventDefault()}
                 className="block font-neueRegular transition-opacity duration-150 ease-out"
               >
                 {c.text}
